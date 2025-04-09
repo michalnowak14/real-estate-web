@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Property Gallery - Real Estate Listings</title>
+    <script
+      src="https://kit.fontawesome.com/96de1b30ee.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="../dist/css/main.css" />
+    <script defer src="../dist/js/loadComponents.js"></script>
+  </head>
+  <body class="gallery-page">
+    <div id="nav-container"></div>
+
+    <section class="gallery-section">
+      <h1>Property Listings</h1>
+
+      <div class="gallery-filters">
+        <input
+          type="text"
+          id="search-input"
+          placeholder="Search properties..."
+        />
+
+        <select id="type-select">
+          <option value="">All Types</option>
+          <option value="sale">For Sale</option>
+          <option value="rent">For Rent</option>
+        </select>
+
+        <div class="price-filter">
+          <label for="price-range"
+            >Max Price: $<span id="price-display">1000000</span></label
+          >
+          <input
+            type="range"
+            id="price-range"
+            min="50000"
+            max="3000000"
+            step="50000"
+            value="1000000"
+          />
+        </div>
+      </div>
+
+      <div id="properties-container" class="properties-container"></div>
+
+      <div id="pagination-container" class="pagination-container"></div>
+    </section>
+
+    <div id="footer-container"></div>
+
+    <script type="module" src="../dist/js/PropertyGallery.js"></script>
+  </body>
+</html>

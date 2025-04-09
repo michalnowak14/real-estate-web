@@ -1,0 +1,15 @@
+$primary-color: rgb(44, 62, 80);
+$secondary-color: #93bdd8;
+$text-color: #333;
+$background-color: #f4f4f4;
+$white: #ffffff;
+$font-stack: Arial, sans-serif;
+$hover-color: #0056b3;
+$sub-text-color: #555;
+$border-color: #ddd;
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -1,0 +1,81 @@
+@use "variables" as *;
+
+body {
+  font-family: $font-stack;
+  margin: 0;
+  padding: 0;
+  background-color: $background-color;
+}
+
+#item-container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  background: $white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+
+  h2 {
+    font-size: 24px;
+    color: $text-color;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  p {
+    padding: 0 15px;
+  }
+  h3 {
+    margin-top: 15px;
+  }
+
+  h4 + p {
+    text-align: justify;
+    padding: 0 15px;
+  }
+  img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 20px;
+  }
+
+  #basic-info {
+    font-size: 16px;
+    color: $sub-text-color;
+    line-height: 1.5;
+    text-align: center;
+  }
+
+  #extra-info {
+    font-size: 14px;
+    color: #444;
+    line-height: 1.5;
+    padding: 15px;
+    border-top: 1px solid $border-color;
+    margin-top: 15px;
+    display: none;
+  }
+
+  .show-more-btn {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background-color: $primary-color;
+    color: $white;
+    font-size: 16px;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+
+    &:hover {
+      background-color: $hover-color;
+    }
+  }
+}
+
+a.back {
+  color: $primary-color;
+  margin: 15px 15px;
+}

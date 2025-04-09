@@ -1,0 +1,213 @@
+@use "variables" as *;
+
+.gallery-section {
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+  h1 {
+    padding: 30px 0;
+  }
+}
+option {
+  width: 100%;
+}
+.gallery-filters {
+  display: flex;
+  gap: 15px;
+  justify-content: space-around;
+  padding: 10px;
+  background-color: $primary-color;
+  border-radius: 8px;
+  width: 1260px;
+  margin: auto 10px;
+
+  input[type="text"] {
+    padding: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+    width: 30%;
+
+    background: rgba(255, 255, 255, 0.2);
+    color: $white;
+
+    &::placeholder {
+      color: rgba(255, 255, 255, 0.7);
+    }
+  }
+
+  select {
+    padding: 10px;
+    width: 30%;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.2);
+    color: $white;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+    option {
+      background-color: rgba(255, 255, 255, 0.2);
+      color: $text-color;
+    }
+  }
+
+  .price-filter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    label {
+      font-size: 14px;
+      color: $white;
+      margin-bottom: 5px;
+    }
+    input[type="search"] {
+      width: 200px;
+    }
+
+    .price-filter {
+      width: 30%;
+    }
+
+    input[type="range"] {
+      width: 100%;
+      -webkit-appearance: none;
+      appearance: none;
+      height: 5px;
+      background: rgba(255, 255, 255, 0.3);
+      outline: none;
+      border-radius: 5px;
+      cursor: pointer;
+
+      &::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 15px;
+        height: 15px;
+        background: rgba(255, 255, 255, 0.3);
+        border-radius: 50%;
+      }
+    }
+  }
+}
+
+.properties-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, auto);
+  gap: 20px;
+  padding: 20px;
+}
+
+.property-card {
+  position: relative;
+  border-radius: 15px;
+  padding-bottom: 15px;
+  background-color: $white;
+  color: $text-color;
+  width: 100%;
+  max-width: 300px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  text-decoration: none;
+  span.type {
+    font-size: 13px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: $primary-color;
+    border-radius: 15px;
+    padding: 0 20px;
+    color: $white;
+    text-transform: capitalize;
+  }
+  h3 {
+    text-align: center;
+    padding: 0 15px;
+  }
+
+  img {
+    width: 100%;
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 15px 15px 0px 0px;
+  }
+  p {
+    margin-left: 15px;
+    text-align: left;
+  }
+}
+.pagination-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: 40px;
+
+  button {
+    background-color: $primary-color;
+    border: 1px solid $primary-color;
+    color: $white;
+    height: 30px;
+    width: 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 14px;
+
+    &:hover {
+      background-color: #ddd;
+    }
+
+    &:disabled {
+      background-color: #e0e0e0;
+      color: #999;
+      cursor: not-allowed;
+    }
+
+    &.active {
+      background-color: $secondary-color;
+      color: $white;
+      border-color: $primary-color;
+      font-weight: bold;
+    }
+  }
+}
+
+@media (max-width: 1400px) {
+  .gallery-filters {
+    width: 940px;
+  }
+  .properties-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 1150px) {
+  .gallery-filters {
+    width: 620px;
+  }
+  .properties-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 650px) {
+  .gallery-filters {
+    padding: 20px 0;
+    width: 300px;
+    flex-direction: column;
+    align-items: center;
+    select,
+    .price-filter,
+    input[type="text"] {
+      width: 80%;
+      font-size: 10px;
+    }
+  }
+  .properties-container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

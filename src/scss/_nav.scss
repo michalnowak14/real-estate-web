@@ -1,0 +1,164 @@
+@use "variables" as *;
+
+.gallery-page {
+  .site-header {
+    .nav-menu {
+      li {
+        .submenu {
+          li {
+            a:hover {
+              color: $secondary-color;
+            }
+          }
+        }
+      }
+      a:hover {
+        color: $secondary-color;
+      }
+    }
+  }
+}
+.details-page {
+  .site-header {
+    .nav-menu {
+      li {
+        .submenu {
+          li {
+            a:hover {
+              color: $secondary-color;
+            }
+          }
+        }
+      }
+      a:hover {
+        color: $secondary-color;
+      }
+    }
+  }
+}
+.contact-page {
+  .site-header {
+    .nav-menu {
+      li {
+        .submenu {
+          li {
+            a:hover {
+              color: $secondary-color;
+            }
+          }
+        }
+      }
+      a:hover {
+        color: $secondary-color;
+      }
+    }
+  }
+}
+.site-header {
+  display: flex;
+  justify-content: flex-start;
+  height: 25vh;
+  align-items: start;
+  z-index: 10;
+  color: $white;
+  padding: 1rem 5%;
+  background-color: $primary-color;
+
+  .main-nav {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: flex-start;
+  }
+
+  .logo {
+    z-index: 20;
+    text-decoration: none;
+
+    a {
+      color: $white;
+      font-size: 1.8rem;
+      font-weight: bold;
+    }
+  }
+
+  .nav-menu {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    > li {
+      margin: 0 25px;
+      position: relative;
+
+      > a {
+        color: $white;
+        text-decoration: none;
+        transition: color 0.3s ease;
+
+        &:hover {
+          color: $primary-color;
+        }
+      }
+
+      &.dropdown:hover .submenu {
+        display: block;
+      }
+    }
+
+    .submenu {
+      list-style: none;
+      display: none;
+      position: absolute;
+      background-color: transparent;
+      min-width: 200px;
+
+      li {
+        padding: 10px 0;
+
+        a {
+          color: $white;
+          text-decoration: none;
+        }
+        a:hover {
+          color: $primary-color;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .site-header {
+    .main-nav {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      width: 100%;
+      align-items: center;
+    }
+
+    .logo {
+      align-self: center;
+    }
+
+    .nav-menu {
+      align-self: center;
+
+      > li {
+        > a {
+          &:hover {
+            color: $primary-color;
+          }
+        }
+
+        &.dropdown:hover .submenu {
+          display: flex;
+          flex-direction: column;
+        }
+      }
+    }
+  }
+}
